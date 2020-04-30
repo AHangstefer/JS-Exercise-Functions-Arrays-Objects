@@ -76,11 +76,17 @@ temperatureCtoF(24);
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(c, f) {
-  console.log (Math.round(c*9/5+32)+ "F");
-  console.log (Math.round(f)+"F");
+function temperatureInF(num, t) {
+ if (t==="C"){
+   return (Math.round(num*9/5+32)+"F");
+ }
+ else{
+   return (Math.round(num)+ "F");
+ }
+ return (num);
 }
-temperatureInF(24, 88);
+temperatureInF(24, "C");
+
 
 
 /**
