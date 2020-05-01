@@ -78,10 +78,10 @@ temperatureCtoF(24);
 */
 function temperatureInF(num, t) {
  if (t==="C"){
-   return (Math.round(num*9/5+32)+"F");
+   return Math.round(num*9/5+32)+"F";
  }
  else{
-   return (Math.round(num)+ "F");
+   return Math.round(num)+ "F";
  }
  return (num);
 }
@@ -105,10 +105,15 @@ temperatureInF(24, "C");
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(id, name, email) {
+  let person =  {
+    id:id,
+    name:name,
+    email:email,
+ }
+ return person;
 }
-
+makePersonObject( 5, "Leia", "leia@leia.com");
 /**
  * ### Challenge `getName`
  * 
@@ -122,9 +127,12 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(anObject) {
+
+  return 'Hello, my name is ' + anObject.name;
 }
+
+
 
 
 /**
@@ -142,9 +150,17 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+function appleIndex(a){
+  let newIndex = 0;
+  for (let i=0; i<a.length; i++){
+    if (a[i]==='apple'){
+      newIndex = i;
+    }
+  }
+  return newIndex;
 }
+appleIndex(['orange', 'grape', 'apple', 'banana', 'mango']);
+
 
 /**
  * ### Challenge `isItAnApple`
@@ -161,9 +177,18 @@ function appleIndex(/* code here */) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(fruit) {
+   let newArray = [];
+   for (let i=0; i<fruit.length; i++){
+     if (fruit[i]==='apple'){
+       newArray.push(true);
+     }else{
+       newArray.push(false);
+     }
+   }
+   return newArray;
 }
+
 
 
 
